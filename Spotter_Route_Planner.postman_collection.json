@@ -1,0 +1,162 @@
+{
+  "info": {
+    "name": "Spotter - Optimal Fuel Route Planner",
+    "description": "API requests for the Spotter Backend Assessment coding assignment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Plan Route - Long Cross Country (NY to LA)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start\": \"New York, NY\",\n  \"finish\": \"Los Angeles, CA\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/route-planner/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "route-planner",
+            ""
+          ]
+        },
+        "description": "Cross-country route exceeding 500 miles requiring multiple optimal fuel stops at 10 MPG."
+      }
+    },
+    {
+      "name": "2. Plan Route - Mid Distance (Chicago to Miami)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start\": \"Chicago, IL\",\n  \"finish\": \"Miami, FL\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/route-planner/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "route-planner",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Plan Route - Short Trip under 500 mi (Austin to Dallas)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start\": \"Austin, TX\",\n  \"finish\": \"Dallas, TX\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/route-planner/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "route-planner",
+            ""
+          ]
+        },
+        "description": "Short route under 500 miles demonstrating zero stops needed because full tank covers the entire distance."
+      }
+    },
+    {
+      "name": "4. API Info & Health Check (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/route-planner/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "route-planner",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. Error Case - Missing Start Parameter (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"finish\": \"Los Angeles, CA\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/route-planner/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "route-planner",
+            ""
+          ]
+        }
+      }
+    }
+  ]
+}
